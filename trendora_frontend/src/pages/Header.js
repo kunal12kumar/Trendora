@@ -4,7 +4,7 @@ import React from "react";
 export default function Header() {
 
     return (
-        <div className="w-full h-auto ">
+        <div className="w-full h-auto fixed ">
             {/* now the heading for the discount and others part */}
 
             <div className="w-full h-[50px] bg-[#8b7777] text-2xl text-white font-roboto items-center flex justify-center  ">
