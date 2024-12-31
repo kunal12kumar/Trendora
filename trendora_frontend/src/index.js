@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/Home';
 import Sign_in from './pages/Sign_in';
+import Bulk_order from './pages/Bulk_order';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let allrouter=createBrowserRouter([
@@ -17,7 +18,11 @@ let allrouter=createBrowserRouter([
   {
     path:'/sign_in',
     element:<Sign_in></Sign_in>
-  }
+  },
+  {
+    path:'/bulk_order',
+    element:<Bulk_order></Bulk_order>
+  },
 ])
 
 

@@ -2,6 +2,7 @@
 import React from "react";
 import loginuser from "../images/white-login-user.png"
 import { Link } from "react-router-dom";
+import logo from "../images/logo_image.png"
 
 export default function Header() {
 
@@ -36,10 +37,20 @@ export default function Header() {
                         </div>
                         <div className="drawer-side">
                             <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-                            <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+                            <ul className="menu bg-black flex justify-center  text-2xl text-base-content min-h-full w-80  gap-2">
                                 {/* Sidebar content here */}
-                                <li><a>Sidebar Item 1</a></li>
-                                <li><a>Sidebar Item 2</a></li>
+                                <img className="h-[250px] " src={logo}></img>
+                               
+                                <Link to={'/bulk_order'}><li className="hover:bg-base-300 rounded-lg p-2">Customize Design</li></Link>
+                                <Link to={'/bulk_order'}><li className="hover:bg-base-300 rounded-lg p-2">Bulk Order</li></Link>
+                                <Link to={'/'}><li className="hover:bg-base-300 rounded-lg p-2">Huddy</li></Link>
+                                <Link to={'/sign_in'}><li className="hover:bg-base-300 rounded-lg p-2">Log In</li></Link>
+                                <Link to={'/'}><li className="hover:bg-base-300 rounded-lg p-2">About Us</li></Link>
+                                <Link to={'/'}><li className="hover:bg-base-300 rounded-lg p-2"> TShirts</li></Link>
+                                
+                                
+    
+
                             </ul>
                         </div>
                     </div>
