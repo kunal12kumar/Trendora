@@ -39,7 +39,7 @@ export default function Header() {
                             <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
                             <ul className="menu bg-black flex justify-center  text-2xl text-base-content min-h-full w-80  gap-2">
                                 {/* Sidebar content here */}
-                                <img className="h-[250px] " src={logo}></img>
+                                <img className="h-[300px] " src={logo}></img>
                                
                                 <Link to={'/bulk_order'}><li className="hover:bg-base-300 rounded-lg p-2">Customize Design</li></Link>
                                 <Link to={'/bulk_order'}><li className="hover:bg-base-300 rounded-lg p-2">Bulk Order</li></Link>
