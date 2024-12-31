@@ -4,6 +4,7 @@ import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/Home';
+import Sign_in from './pages/Sign_in';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let allrouter=createBrowserRouter([
@@ -12,6 +13,10 @@ let allrouter=createBrowserRouter([
     path:'/',
     element:<Home></Home>
 
+  },
+  {
+    path:'/sign_in',
+    element:<Sign_in></Sign_in>
   }
 ])
 
