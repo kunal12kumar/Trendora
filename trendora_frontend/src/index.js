@@ -8,8 +8,9 @@ import Home from './pages/Home';
 import Sign_in from './pages/Sign_in';
 import Bulk_order from './pages/Bulk_order';
 import Signup from './pages/Sign_up';
-// import CallbackPage from './pages/CallbackPage'; // Add a callback page for handling Auth0 redirect
+
 import LoginButton from './pages/Sign_in';
+import CallbackPage from './pages/Callback';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let allrouter = createBrowserRouter([
@@ -31,10 +32,10 @@ let allrouter = createBrowserRouter([
     path: '/sign_up',
     element: <Signup></Signup>
   },
-  // {
-  //   path: '/callback',
-  //   element: <CallbackPage /> // Add a callback page route
-  // }
+ {
+  path:'/callback',
+  element:<CallbackPage></CallbackPage>
+ }
 ])
 
 
