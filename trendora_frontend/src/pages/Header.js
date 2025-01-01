@@ -11,7 +11,7 @@ export default function Header() {
             {/* now the heading for the discount and others part */}
 
             <div className="w-full h-[50px] bg-[#8b7777] text-2xl text-white font-roboto items-center flex justify-center  ">
-                Trendora
+                Get 10% discount on your first Purchase 
 
             </div>
             {/* now for nav which contains the menu , cart ,sign in or sign up section  */}
@@ -62,7 +62,7 @@ export default function Header() {
                     <div className=" flex gap-4 justify-between ">
                         {/* for sign in icon  */}
                         <div>
-                            <Link to={'/sign_in'}><img className=" h-10 w-10 mt-1 " src={loginuser}></img></Link>
+                            <Link to={'/sign_up'}><img className=" h-10 w-10 mt-1 " src={loginuser}></img></Link>
 
                         </div>
                         <div className="dropdown dropdown-end">

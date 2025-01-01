@@ -2,33 +2,53 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Auth0Provider } from '@auth0/auth0-react';
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/Home';
 import Sign_in from './pages/Sign_in';
 import Bulk_order from './pages/Bulk_order';
+import Signup from './pages/Sign_up';
+// import CallbackPage from './pages/CallbackPage'; // Add a callback page for handling Auth0 redirect
+import LoginButton from './pages/Sign_in';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-let allrouter=createBrowserRouter([
+let allrouter = createBrowserRouter([
 
   {
-    path:'/',
-    element:<Home></Home>
+    path: '/',
+    element: <Home></Home>
 
   },
   {
-    path:'/sign_in',
-    element:<Sign_in></Sign_in>
+    path: '/sign_in',
+    element: <LoginButton></LoginButton>
   },
   {
-    path:'/bulk_order',
-    element:<Bulk_order></Bulk_order>
+    path: '/bulk_order',
+    element: <Bulk_order></Bulk_order>
   },
+  {
+    path: '/sign_up',
+    element: <Signup></Signup>
+  },
+  // {
+  //   path: '/callback',
+  //   element: <CallbackPage /> // Add a callback page route
+  // }
 ])
 
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={allrouter}></RouterProvider>
+    <Auth0Provider
+      domain="dev-xufegyqmkqi8ezy1.us.auth0.com"
+      clientId="X5X1FTFxCVSod1ISDBIrJPgFwdakBdZm"
+      authorizationParams={{
+        redirect_uri: window.location.origin + '/callback' // Ensure Auth0 redirects back to /callback
+      }}
+    >
+      <RouterProvider router={allrouter}></RouterProvider>
+    </Auth0Provider>
   </React.StrictMode>
 );
 

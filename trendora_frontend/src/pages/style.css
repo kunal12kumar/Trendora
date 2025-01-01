@@ -6,7 +6,7 @@
 }
 
 .attention{
-    animation: inside-outside 2s infinite ;
+    animation: inside-outside 1s infinite ;
 }
 
 @keyframes glow-hover {
@@ -16,7 +16,7 @@
 
 @keyframes inside-outside {
     0%{
-        transform: scale(75%);
+        transform: scale(85%);
     }
     100%{
         transform: scale(100%);
