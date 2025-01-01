@@ -28,6 +28,7 @@ export const Verifycode = async (req, res) => {
             // Update the user's verification status
             user.isVarified = true;
             await user.save();
+            console.log(user);
 
             return res.status(200).json(
                 { success: true, message: 'Account verified successfully' }

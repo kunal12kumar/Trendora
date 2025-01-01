@@ -11,6 +11,7 @@ import Signup from './pages/Sign_up';
 
 import LoginButton from './pages/Sign_in';
 import CallbackPage from './pages/Callback';
+import LogoutButton from './pages/Sign_out';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let allrouter = createBrowserRouter([
@@ -32,9 +33,17 @@ let allrouter = createBrowserRouter([
     path: '/sign_up',
     element: <Signup></Signup>
   },
+  {
+    path: '/login',
+    element: <LoginButton></LoginButton>
+  },
  {
   path:'/callback',
   element:<CallbackPage></CallbackPage>
+ },
+ {
+  path:'log_out',
+  element:<LogoutButton></LogoutButton>
  }
 ])
 
@@ -45,7 +54,7 @@ root.render(
       domain="dev-xufegyqmkqi8ezy1.us.auth0.com"
       clientId="X5X1FTFxCVSod1ISDBIrJPgFwdakBdZm"
       authorizationParams={{
-        redirect_uri: window.location.origin + '/callback' // Ensure Auth0 redirects back to /callback
+        redirect_uri: "http://localhost:3000" // Ensure Auth0 redirects back to /callback
       }}
     >
       <RouterProvider router={allrouter}></RouterProvider>

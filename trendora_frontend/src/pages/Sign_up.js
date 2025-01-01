@@ -116,7 +116,7 @@ export default function Signup() {
     return (
 
 
-        <div className="flex font-poppins justify-center items-center min-h-screen bg-gray-100">
+        <div className="flex font-poppins justify-center items-center min-h-screen ">
             <ToastContainer />
             <form onSubmit={handelSubmit}>
                 <div className="bg-white p-6 rounded-lg shadow-lg w-96">
@@ -172,10 +172,10 @@ export default function Signup() {
                         />
                     </div>
                     {/* for otp */}
-                    <div className="flex w-[70%] justify-center mx-auto flex-row gap-2">
+                    <div className="flex w-[70%] justify-center  mx-auto flex-row gap-2">
                         {isotpsent && (<input onChange={updatedata} name="otp" value={userdata.otp} required className="w-[70%] h-[40px] rounded-lg border-[1px] placeholder:text-center hover:border-[2px] hover:border-[#0F2F8C] text-center border-[#59023B] " type="text" placeholder="Otp"></input>)}
 
-                        <button className="w-[50%] h-[40px] mx-auto   rounded-lg border-[1px] placeholder:text-center hover:border-[2px] hover:border-[#0F2F8C] text-center text-red border-[#59023B] ">{isotpsent ? 'verify' : 'Send'}</button>
+                        <button className="w-[50%] h-[40px] mx-auto bg-black  rounded-lg border-[1px] placeholder:text-center hover:border-[2px] hover:border-[#0F2F8C] text-center text-red border-[#59023B] ">{isotpsent ? 'verify' : 'Send'}</button>
                     </div>
                     {/* <button
                             
@@ -196,7 +196,7 @@ export default function Signup() {
 
                     <p className="text-center text-sm text-gray-500 mt-4">
                         Already have an account?{" "}
-                        <Link to={'/sign_in'}>
+                        <Link to={'/login'}>
                             Sign In
                             </Link>
                         
