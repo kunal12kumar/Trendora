@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Auth0Provider } from '@auth0/auth0-react';
+
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/Home';
 import Sign_in from './pages/Sign_in';
@@ -12,6 +12,9 @@ import Signup from './pages/Sign_up';
 import LoginButton from './pages/Sign_in';
 import CallbackPage from './pages/Callback';
 import LogoutButton from './pages/Sign_out';
+import UserProfile from './pages/Profile';
+import Shippingpolicies from './pages/ShippingPolicies';
+import Refundpoliciy from './pages/RefundPolicy';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let allrouter = createBrowserRouter([
@@ -34,31 +37,35 @@ let allrouter = createBrowserRouter([
     element: <Signup></Signup>
   },
   {
-    path: '/login',
-    element: <LoginButton></LoginButton>
+    path: '/log_in',
+    element: <Sign_in></Sign_in>
   },
- {
-  path:'/callback',
-  element:<CallbackPage></CallbackPage>
- },
- {
-  path:'log_out',
-  element:<LogoutButton></LogoutButton>
- }
+  {
+    path: '/callback',
+    element: <CallbackPage></CallbackPage>
+  },
+  {
+    path: 'log_out',
+    element: <LogoutButton></LogoutButton>
+  },{
+    path:'/profile',
+    element:<UserProfile></UserProfile>
+  },{
+    path:'/shippingpolicy',
+    element:<Shippingpolicies></Shippingpolicies>
+  },
+  {
+    path:'/refundpolicy',
+    element:<Refundpoliciy></Refundpoliciy>
+  }
 ])
 
 
 root.render(
   <React.StrictMode>
-    <Auth0Provider
-      domain="dev-xufegyqmkqi8ezy1.us.auth0.com"
-      clientId="X5X1FTFxCVSod1ISDBIrJPgFwdakBdZm"
-      authorizationParams={{
-        redirect_uri: "http://localhost:3000" // Ensure Auth0 redirects back to /callback
-      }}
-    >
+    
       <RouterProvider router={allrouter}></RouterProvider>
-    </Auth0Provider>
+    
   </React.StrictMode>
 );
 

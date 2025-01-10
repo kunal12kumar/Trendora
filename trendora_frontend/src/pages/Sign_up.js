@@ -1,11 +1,19 @@
 // this is for the sign up page 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import axios from "axios"
+
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
 
 export default function Signup() {
+
+    // here code for token and login authentication 
+
+   
+
+
+
 
     // to udate the all data 
     const [userdata, setuserdata] = useState(
@@ -56,7 +64,7 @@ export default function Signup() {
 
             // now calling the api to send the otp and verifying the user to save into the database
             try {
-                const response = await axios.post('http://localhost:8000/api/Rsignupuser/usersignup', {
+                const response = await axios.post('http://localhost:9000/api/Rsignupuser/usersignup', {
                     username: userdata.username,
                     email: userdata.email,
                     mobileno: userdata.mobileno,
@@ -76,7 +84,7 @@ export default function Signup() {
         }
         else {
             try {
-                const response = await axios.post('http://localhost:8000/api/Rverifycode/verifycode', {
+                const response = await axios.post('http://localhost:9000/api/Rverifycode/verifycode', {
                     username: userdata.username,
                     email: userdata.email,
                     mobileno: userdata.mobileno,
@@ -105,11 +113,19 @@ export default function Signup() {
             }
         }
 
+        // after authentication get confirmed the useffect will start api calling
+
+
+
 
 
 
 
     }
+    
+   
+
+
 
 
 
@@ -196,11 +212,15 @@ export default function Signup() {
 
                     <p className="text-center text-sm text-gray-500 mt-4">
                         Already have an account?{" "}
-                        <Link to={'/login'}>
-                            Sign In
-                            </Link>
-                        
+
+                      
+
+                        <Link to={'/log_in'}>Signin</Link>
+
+
                     </p>
+
+
                 </div>
             </form>
         </div>

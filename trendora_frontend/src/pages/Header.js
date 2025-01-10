@@ -48,6 +48,7 @@ export default function Header() {
                                 <Link to={'/'}><li className="hover:bg-base-300 rounded-lg p-2">About Us</li></Link>
                                 <Link to={'/'}><li className="hover:bg-base-300 rounded-lg p-2"> TShirts</li></Link>
                                 <Link to={'/log_out'}><li className="hover:bg-base-300 rounded-lg p-2"> Log Out</li></Link>
+                                <Link to={'/profile'}><li className="hover:bg-base-300 rounded-lg p-2">Profile</li></Link>
                                 
                                 
     
@@ -57,7 +58,7 @@ export default function Header() {
                     </div>
                 </div>
                 <div className="navbar-center">
-                    <a className="  text-3xl text-white font-roboto">Trendora</a>
+                    <a className="  text-3xl text-white font-roboto">TrendOra</a>
                 </div>
                 <div className="navbar-end">
                     <div className=" flex gap-4 justify-between ">
