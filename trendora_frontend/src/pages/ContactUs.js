@@ -93,7 +93,7 @@ export default function ContactUs() {
 
     return (
 
-        <div className="flex font-poppins justify-center items-center min-h-screen bg-gray-100">
+        <div className="flex font-poppins justify-center items-center  text-white min-h-screen bg-gray-100">
             <ToastContainer></ToastContainer>
             <div className="bg-white p-6 rounded-lg shadow-lg w-[50%]">
                 <h2 className="text-2xl font-semibold text-gray-800 text-center mb-4">Contact  Us</h2>
@@ -109,7 +109,7 @@ export default function ContactUs() {
                             value={contactusdetails.name}
                             type="text"
                             placeholder="TrendOra"
-                            className="w-full px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                            className="w-full px-4 py-2 border rounded-lg text-white focus:outline-none focus:ring-2 focus:border-transparent"
                         />
                     </div>
                     <div className="mb-4">
@@ -123,7 +123,7 @@ export default function ContactUs() {
                             type="email"
                             id="email"
                             placeholder="trendora.ltd@gmail.com"
-                            className="w-full px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                            className="w-full px-4 py-2 border rounded-lg text-white focus:outline-none focus:ring-2  focus:border-transparent"
                         />
                     </div>
                     <div className="mb-4">
@@ -137,7 +137,7 @@ export default function ContactUs() {
                             type="MobileNo"
                             id="MobileNo."
                             placeholder="Mobile No."
-                            className="w-full px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                            className="w-full px-4 py-2 border rounded-lg text-white focus:outline-none focus:ring-2  focus:border-transparent"
                         />
                     </div>
                     <div className="w-full max-w-full mb-4 bg-white p-4 rounded-lg shadow-lg">
@@ -150,7 +150,7 @@ export default function ContactUs() {
 
 
                             placeholder="Start typing here..."
-                            className="w-full p-4 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                            className="w-full p-4 border rounded-lg text-white focus:outline-none focus:ring-2 focus:border-transparent"
                         ></textarea>
                         {/* <p className="text-sm text-gray-500 mt-2">
                             Character count: {text.length}
