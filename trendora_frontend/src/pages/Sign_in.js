@@ -104,7 +104,7 @@ export default function SignIn() {
 
 
   return (
-    <div className="flex font-poppins justify-center items-center min-h-screen bg-gray-100">
+    <div className="flex font-poppins justify-center items-center min-h-screen ">
       <ToastContainer />
       <form onSubmit={handelSubmit}>
         <div className="bg-white p-6 rounded-lg shadow-lg w-96">

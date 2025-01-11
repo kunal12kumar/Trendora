@@ -18,6 +18,7 @@ import Refundpoliciy from './pages/RefundPolicy';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
+import CartPage from './pages/CartPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let allrouter = createBrowserRouter([
@@ -74,6 +75,11 @@ let allrouter = createBrowserRouter([
   {
     path:'/contactus',
     element:<ContactUs></ContactUs>
+  },
+  {
+    path:'/cart',
+    element:<CartPage></CartPage>
+
   }
 ])
 

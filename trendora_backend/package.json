@@ -4,7 +4,7 @@
   "description": "\"This is the backend of the trendora website",
   "main": "index.js",
   "type": "module",
-  "proxy": "http://localhost:8000",
+  "proxy": "http://localhost:9000",
   "directories": {
     "lib": "lib"
   },
