@@ -15,6 +15,9 @@ import LogoutButton from './pages/Sign_out';
 import UserProfile from './pages/Profile';
 import Shippingpolicies from './pages/ShippingPolicies';
 import Refundpoliciy from './pages/RefundPolicy';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import AboutUs from './pages/AboutUs';
+import ContactUs from './pages/ContactUs';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let allrouter = createBrowserRouter([
@@ -57,6 +60,20 @@ let allrouter = createBrowserRouter([
   {
     path:'/refundpolicy',
     element:<Refundpoliciy></Refundpoliciy>
+  },
+
+  {
+    path: '/privacypolicy',
+    element:<PrivacyPolicy></PrivacyPolicy>
+  },
+
+  {
+    path:'/aboutus',
+    element:<AboutUs></AboutUs>
+  },
+  {
+    path:'/contactus',
+    element:<ContactUs></ContactUs>
   }
 ])
 

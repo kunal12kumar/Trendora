@@ -5,14 +5,14 @@ export default function Shippingpolicies() {
     return (
 
         <div className="">
-            <div className="max-w-4xl mx-auto p-6 bg-gray-50 text-gray-800">
+            <div className="max-w-4xl mx-auto p-6 bg-[black]">
                 <h1 className="text-3xl font-bold text-center text-blue-700 mb-6">
                     Shipping Policy
                 </h1>
 
                 <div className="space-y-6">
                     <section>
-                        <h2 className="text-xl font-semibold">Shipping Information:</h2>
+                        <h2 className="text-xl font-semibold text-blue-700">Shipping Information:</h2>
                         <p>
                             <span className="font-bold">TrendOra</span> currently ships to over
                             15,000 PIN codes across India.

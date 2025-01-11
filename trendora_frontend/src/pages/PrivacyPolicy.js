@@ -1,80 +1,78 @@
 import React from "react";
 
-export default function Refundpoliciy() {
+export default function PrivacyPolicy() {
 
     return (
 
         <div className="">
-            <div className="max-w-4xl mx-auto p-6 bg-gray-50 text-gray-800">
+            <div className="max-w-4xl mx-auto p-6 bg-[#040404] text-[white]">
                 <h1 className="text-3xl font-bold text-center text-blue-700 mb-6">
                     Privacy Policy
                 </h1>
 
                 <div className="space-y-6">
                     <section className=" ">
-                        <h2 className="text-xl font-semibold">Returns:</h2>
+                        <h2 className="text-xl font-semibold text-blue-700">Personal information we collect :</h2>
                         <p>
-                            Our policy lasts 7 days. If 7 days have gone by since your purchase, unfortunately, we can’t offer you a refund or exchange.
+                            When you visit the Site, we automatically collect certain information about your device, including information about your web browser, IP address, time zone, and some of the cookies that are installed on your device. Additionally, as you browse the Site, we collect information about the individual web pages or products that you view, what websites or search terms referred you to the Site, and information about how you interact with the Site. We refer to this automatically-collected information as “Device Information”.
                         </p>
 
                         <p>
-                            To be eligible for a return, your item must be unused and in the same condition that you received it. It must also be in the original packaging. Please make a video while opening the Packaging as supporting proof in case you wish to claim for any return/replacement.
+                            We collect Device Information using the following technologies:
+                            - “Cookies” are data files that are placed on your device or computer and often include an anonymous unique identifier. For more information about cookies, and how to disable cookies, visit http://www.allaboutcookies.org.
+                            - “Log files” track actions occurring on the Site, and collect data including your IP address, browser type, Internet service provider, referring/exit pages, and date/time stamps.
+                            - “Web beacons”, “tags”, and “pixels” are electronic files used to record information about how you browse the Site.
                         </p>
 
                         <p>
-                            Several types of goods are exempt from being returned like Custom printed orders. Additional non-returnable/ non-refundable items:
+                            Additionally when you make a purchase or attempt to make a purchase through the Site, we collect certain information from you, including your name, billing address, shipping address, payment information (including credit card numbers), email address, and phone number. We refer to this information as “Order Information”.
+                        </p>
+
+
+                    </section>
+
+                    <section>
+                        <h2 className="text-xl font-semibold text-blue-700">How do we use your personal information?</h2>
+                        <p>
+                            We use the Order Information that we collect generally to fulfill any orders placed through the Site (including processing your payment information, arranging for shipping, and providing you with invoices and/or order confirmations). Additionally, we use this Order Information to:
+                            - Communicate with you;
+                            - Screen our orders for potential risk or fraud; and
+                            - When in line with the preferences you have shared with us, provide you with information or advertising relating to our products or services.
                         </p>
 
                         <p>
-                            Gift cards
-                            -Design Services
-                            -Custom Apparel
-                            -Custom orders
-                        </p>
 
-                        <p>
-                            To complete your return, we require a receipt or proof of purchase. Please note: TrendOra offers you hassle-free Returns. You may return any unopened item in its original packaging, within 7 days of shipment receipt, for a full refund (less courier/ shipping charges).
-                        </p>
-
-                        <p>
-                            Once we authorize a return,  our courier partners will initiate a pickup. Please note you would need to pack the product and stick the address/return label before handing the product to our courier partner.
-                        </p>
-
-                        <p>
-                            In case our courier partner does not have a return pickup service in your pin code, then we would inform you and you would need to arrange for a return for the items yourself.
-                        </p>
-
-                        <p className=" text-semibold">
-                            Contact number shared for delivery should be a valid 10 digit mobile number of the customer / point of contact. In case the phone number is not contactable or is a wrong number, delivery failure will not be the responsibility TrendOra.
+                            We use the Device Information that we collect to help us screen for potential risk and fraud (in particular, your IP address), and more generally to improve and optimize our Site (for example, by generating analytics about how our customers browse and interact with the Site, and to assess the success of our marketing and advertising campaigns).
                         </p>
                     </section>
 
                     <section>
-                        <h2 className="text-xl font-semibold text-blue-700">Can a cancelation or change in order be made after it has been placed?</h2>
+                        <h2 className="text-xl font-semibold text-blue-700">Sharing you personal Information</h2>
                         <p>
-                            Orders can be cancelled if the request is made within a few hours of the order being placed and your order hasn't been packed/ dispatched. Normally, once an order is placed, it immediately goes to into our warehouse for fulfillment and thus cannot be changed. Additionally, promotional and discount codes cannot be applied post-order, nor can their effects.
-                        </p>
-                    </section>
-
-                    <section>
-                        <h2 className="text-xl font-semibold text-blue-700">Exchanges in case of damaged goods (if applicable)</h2>
-                        <p>
-                            We take great care in packaging our products so there is zero damage to your package. However, in case you receive defective or damaged goods, we will gladly replace it for you. Kindly email us images of the unopened and unused parcel illustrating the damaged areas within 24 hours at support@TrendOra.com . We will contact the logistics partner and initiate a transit damage claim if applicable. Once the claim is approved and the materials are received back by us, the replacement shall be sent to you.
+                            We share your Personal Information with third parties to help us use your Personal Information, as described above. For example, we use Shopify to power our online store--you can read more about how Shopify uses your Personal Information here: https://www.shopify.com/legal/privacy. We also use Google Analytics to help us understand how our customers use the Site -- you can read more about how Google uses your Personal Information here: https://www.google.com/intl/en/policies/privacy/. You can also opt-out of Google Analytics here: https://tools.google.com/dlpage/gaoptout.
                         </p>
 
                         <p className="mt-4">
-                            If you return part of the products of the same order, the amount to be returned will be calculated considering the price of the products acquired at the end, not the total products of the original order.
+                            Finally, we may also share your Personal Information to comply with applicable laws and regulations, to respond to a subpoena, search warrant or other lawful request for information we receive, or to otherwise protect our rights.
                         </p>
                     </section>
 
                     <section>
-                        <h2 className="text-xl font-semibold text-blue-700">Returns incase of quality issues:</h2>
+                        <h2 className="text-xl font-semibold text-blue-700">Behavioral advertising</h2>
                         <p>
-                            If for any reason you are not satisfied with the quality of our product(s), please return the goods back to us and we will issue a full refund (less courier/shipping charges) upon receipt of package & quality check. If you return part of the products of the same order, the amount to be returned will be calculated considering the price of the products acquired at the end, not the total products of the original order.
+                            As described above, we use your Personal Information to provide you with targeted advertisements or marketing communications we believe may be of interest to you. For more information about how targeted advertising works, you can visit the Network Advertising Initiative’s (“NAI”) educational page at http://www.networkadvertising.org/understanding-online-advertising/how-does-it-work.
                         </p>
 
                         <p className="mt-4">
-                            Our prime focus is to deliver colors and products as accurately as shown on our website, but due to certain conditions like paper texture, inks used, weather conditions, monitor settings; minor differences may occur. Rest assured, we never compromise on the quality of the materials used. Due to the fact that our products are made to order, and can't be returned, you should be sure that any slight color variations (if any) that are possible from our final printed products would be acceptable to you.
+                            You can opt out of targeted advertising by using the links below:
+                            - Facebook: https://www.facebook.com/settings/?tab=ads
+                            - Google: https://www.google.com/settings/ads/anonymous
+                            - Bing: https://advertise.bingads.microsoft.com/en-us/resources/policies/personalized-ads
+                        </p>
+
+                        <p className="mt-4">
+                            Additionally, you can opt out of some of these services by visiting the Digital Advertising Alliance’s opt-out portal at: http://optout.aboutads.info/.
+
                         </p>
 
 
@@ -83,21 +81,9 @@ export default function Refundpoliciy() {
                     {/* Damaged Parcels */}
 
                     <section>
-                        <h2 className="text-xl font-semibold text-blue-700">How to return :</h2>
+                        <h2 className="text-xl font-semibold text-blue-700">Do not track :</h2>
                         <p>
-                            If for any reason you are not satisfied with the product, please return the package back to us and we will issue a full refund (less courier/ shipping charges) upon receipt of the package & quality checks. You are liable to bear the cost of shipping the goods back to us.
-                        </p>
-
-                        <p>
-                            Email us at support@TrendOra.com with the reason for your return and we will send you the return address. Please place the item along with the original invoice and and ship it back to the address given in the email you received.
-                        </p>
-
-                        <p>
-                            If your order qualified for free shipping, the courier charges we incurred to send the goods to you will also be deducted. Rest assured, we will refund you the full cost of the returned item, less courier charges.
-                        </p>
-
-                        <p>
-                            If you are shipping an item over INR 1000, you should consider using a trackable shipping service to send back the package.
+                            Please note that we do not alter our Site’s data collection and use practices when we see a Do Not Track signal from your browser.
                         </p>
 
 
@@ -106,25 +92,64 @@ export default function Refundpoliciy() {
                     {/* Remote location  */}
 
                     <section>
-                        <h2 className="text-xl font-semibold text-blue-700">Refunds (if applicable):</h2>
+                        <h2 className="text-xl font-semibold text-blue-700">Your rights :</h2>
                         <p>
-                            Once your return is received and inspected, we will send you an email to notify you that we have received your returned item. We will also notify you of the approval or rejection of your refund.
-                            If you are approved, then your refund will be processed, and a credit will automatically be applied to your credit card or original method of payment, within 7-10 business days.
+                            If you are a European resident, you have the right to access personal information we hold about you and to ask that your personal information be corrected, updated, or deleted. If you would like to exercise this right, please contact us through the contact information below.
+                        </p>
+                        <p>
+                            Additionally, if you are a European resident we note that we are processing your information in order to fulfill contracts we might have with you (for example if you make an order through the Site), or otherwise to pursue our legitimate business interests listed above. Additionally, please note that your information will be transferred outside of Europe, including to Canada and the United States.
                         </p>
 
 
                     </section>
 
                     <section>
-                        <h2 className="text-xl font-semibold text-blue-700">Late or missing refunds (if applicable):</h2>
+                        <h2 className="text-xl font-semibold text-blue-700">Data retention :</h2>
                         <p>
-                            If you haven’t received a refund yet, first check your bank account again.
-                            Then contact your credit card company, it may take some time before your refund is officially posted.
-                            Next contact your bank. There is often some processing time before a refund is posted.
-                            If you’ve done all of this and you still have not received your refund yet, please contact us at support@TrendOra.com
+                            When you place an order through the Site, we will maintain your Order Information for our records unless and until you ask us to delete this information.
                         </p>
 
+
+
+
                     </section>
+
+
+                    <section>
+                        <h2 className="text-xl font-semibold text-blue-700">Changes :</h2>
+                        <p>
+                            We may update this privacy policy from time to time in order to reflect, for example, changes to our practices or for other operational, legal or regulatory reasons.
+                        </p>
+
+
+
+
+                    </section>
+
+                    <section>
+                        <h2 className="text-xl font-semibold text-blue-700">Minors :</h2>
+                        <p>
+                            The Site is not intended for individuals under the age of 18 .
+                        </p>
+
+
+
+
+                    </section>
+
+                    <section>
+                        <h2 className="text-xl font-semibold text-blue-700">Contact us :</h2>
+                        <p>
+                            For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact us by e‑mail at support@TrendOra.com
+                        </p>
+
+
+
+
+                    </section>
+
+
+
 
 
                 </div>
