@@ -20,6 +20,7 @@ import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 import CartPage from './pages/CartPage';
 import ProductUploadForm from './pages/UploadProductList';
+import { ShowProductIndividualbyId } from './pages/ShowProductIndividually';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let allrouter = createBrowserRouter([
@@ -85,6 +86,11 @@ let allrouter = createBrowserRouter([
   {
     path:'/productuploadform',
     element:<ProductUploadForm></ProductUploadForm>
+  },
+  {
+    path:'/product/:id',
+    element:<ShowProductIndividualbyId></ShowProductIndividualbyId>
+
   }
 ])
 
