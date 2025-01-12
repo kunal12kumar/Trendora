@@ -19,6 +19,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 import CartPage from './pages/CartPage';
+import ProductUploadForm from './pages/UploadProductList';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let allrouter = createBrowserRouter([
@@ -80,6 +81,10 @@ let allrouter = createBrowserRouter([
     path:'/cart',
     element:<CartPage></CartPage>
 
+  },
+  {
+    path:'/productuploadform',
+    element:<ProductUploadForm></ProductUploadForm>
   }
 ])
 

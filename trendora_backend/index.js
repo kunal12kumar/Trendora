@@ -13,6 +13,7 @@ import contactusrouter from "./routes/Rcontactus.js";
 import favoritesrouter from "./routes/RFavourite.js";
 import addtocartrouter from "./routes/RAddtocart.js";
 import productlistrouter from "./routes/RProductlist.js";
+import addProductlisttodatabaserouter from "./routes/RAddProductlisttodatabase.js";
 
 
 
@@ -56,6 +57,7 @@ server.use('/api/Rcontactus',contactusrouter);
 server.use('/api/RFavourite',favoritesrouter);
 server.use('/api/RAddtocart',addtocartrouter);
 server.use('/api/Rproductlist',productlistrouter);
+server.use('/api/RAddProductlisttodatabase',addProductlisttodatabaserouter)
 
 // Use a different port if 8000 is unavailable
 const port = process.env.PORT || 3000; // Default to port 3000 if 8000 is unavailable
