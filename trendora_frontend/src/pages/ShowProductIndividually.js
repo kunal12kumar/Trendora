@@ -82,7 +82,7 @@ export function ShowProductIndividualbyId() {
                 console.error("Invalid token:", error);
                 navigate("/log_in"); // Redirect to login if token is invalid or expired
             }
-            const response = await axios.post('http://localhost:9000/api/RAddtocart/addtocart', { productId: id },
+            const response = await axios.post('http://localhost:9000/api/RAddtocart/addtocart', { productId: product.productid , quantity: quantity},
                 {
                     headers: {
                         Authorization: `Bearer ${token}`, // Send the token in the header
@@ -120,7 +120,7 @@ export function ShowProductIndividualbyId() {
                 navigate("/log_in"); // Redirect to login if token is invalid or expired
             }
 
-            const response = await axios.post('http://localhost:9000/api/RFavourite/favourites', { productId: id },
+            const response = await axios.post('http://localhost:9000/api/RFavourite/favourites', { productId: product.productid  },
                 {
                     headers: {
                         Authorization: `Bearer ${token}`, // Send the token in the header

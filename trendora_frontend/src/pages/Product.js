@@ -116,8 +116,8 @@ function ShowProduct({ pro }) {
 
     return (
 
-        <div className="w-full h-[300px] ">
-            <div className=" bg-white w-[100%] rounded-lg" onClick={()=>handleProductClick(pro.productid)}>
+        <div className="w-full h-[300px] cursor-pointer ">
+            <div className=" bg-white w-[100%] p-1 rounded-lg" onClick={()=>handleProductClick(pro.productid)}>
                 <figure>
                     
 
@@ -126,7 +126,7 @@ function ShowProduct({ pro }) {
                             key={index}
                             src={image}
                             alt={`Product Image ${index + 1}`}
-                            className="w-full h-[250px] object-cover "
+                            className="w-full h-[250px] object-cover rounded-lg "
                         />
                     ))}
 
