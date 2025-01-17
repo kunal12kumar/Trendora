@@ -139,6 +139,10 @@ export function ShowProductIndividualbyId() {
                             const response = await axios.post("http://localhost:9000/api/RAddtocart/getlivelocation", {
                                 lat: latitude,
                                 lng: longitude,
+                            },{
+                                headers: {
+                                    Authorization: `Bearer ${token}`, // Send the token in the header
+                                },
                             });
                             setPincode(response.data.pincode);
                             setError(""); // Clear errors if successful

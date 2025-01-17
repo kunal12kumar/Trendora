@@ -1,5 +1,6 @@
 import Product from "../models/ProductlistM.js"
 import Cart from "../models/CartProduct.js";
+import axios from 'axios';
 
 export const AddToCart = async (req,res) => {
 
@@ -125,6 +126,7 @@ export const DelelteProductfromcart=  async (req, res) => {
 
 export const Getlivelocation=async (req, res) => {
     const { lat, lng } = req.body;
+    console.log(lat,lng)
   
     if (!lat || !lng) {
       return res.status(400).json({ error: "Latitude and Longitude are required" });
@@ -132,11 +134,18 @@ export const Getlivelocation=async (req, res) => {
   
     try {
       // Use OpenCage API for reverse geocoding
-      const response = await axios.get(
-        `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=${process.env.OPENCAGE_API_KEY}`
-      );
+      const response = await axios.get('https://api.opencagedata.com/geocode/v1/json', {
+        params: {
+          key: process.env.OPENCAGE_API_KEY, // Make sure your API key is available here
+          q: `${lat},${lng}` // Query with latitude and longitude
+        }
+      });
+ 
   
       const results = response.data.results;
+      console.log(results)
+      const newpincode = response.data.results[0].components.postcode;
+    console.log("Pincode:", newpincode);
   
       // Extract the postal code from the components
       const addressComponent = results

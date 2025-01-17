@@ -6,6 +6,6 @@ import { AddToCart, GetCart, DelelteProductfromcart ,Getlivelocation} from "../c
 addtocartrouter.post('/addtocart', verifyToken, AddToCart);
 addtocartrouter.get('/productfromcart',verifyToken, GetCart);
 addtocartrouter.post('/removeproduct/${productId}',verifyToken,DelelteProductfromcart)
-addtocartrouter.get('/getlivelocation',verifyToken,Getlivelocation)
+addtocartrouter.post('/getlivelocation',verifyToken,Getlivelocation)
 
 export default addtocartrouter;
