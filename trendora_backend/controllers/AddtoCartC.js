@@ -121,3 +121,37 @@ export const DelelteProductfromcart=  async (req, res) => {
     }
   };
   
+// now to display the pin code and also the live location 
+
+export const Getlivelocation=async (req, res) => {
+    const { lat, lng } = req.body;
+  
+    if (!lat || !lng) {
+      return res.status(400).json({ error: "Latitude and Longitude are required" });
+    }
+  
+    try {
+      // Use OpenCage API for reverse geocoding
+      const response = await axios.get(
+        `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=${process.env.OPENCAGE_API_KEY}`
+      );
+  
+      const results = response.data.results;
+  
+      // Extract the postal code from the components
+      const addressComponent = results
+        .flatMap((result) => result.components)
+        .find((component) => component.postcode);
+  
+      const pincode = addressComponent ? addressComponent.postcode : null;
+  
+      if (pincode) {
+        return res.json({ pincode });
+      } else {
+        return res.status(404).json({ error: "Pincode not found" });
+      }
+    } catch (error) {
+      console.error("Error fetching pincode:", error.message);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  }

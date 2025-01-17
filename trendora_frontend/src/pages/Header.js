@@ -13,7 +13,7 @@ export default function Header() {
         <div className="w-full h-auto fixed z-50 ">
             {/* now the heading for the discount and others part */}
 
-            <div className="w-full h-[50px] bg-[#8b7777] text-2xl text-white font-roboto items-center flex justify-center  ">
+            <div className="w-full h-[50px] bg-[#8b7777] text-2xl text-white text-center py-8 font-roboto items-center flex justify-center  ">
                 Get 10% discount on your first Purchase
 
             </div>

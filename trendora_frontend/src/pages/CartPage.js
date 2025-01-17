@@ -12,6 +12,7 @@ const Cart = () => {
   const [totaldiscount, settotaldiscount] = useState(null)
   const [priceafterdiscount, setpriceafterdiscount] = useState(null)
   const [deliveryfee, setdeliveryfee]=useState(49)
+  const islogedin=localStorage.getItem("token")
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -123,6 +124,7 @@ const Cart = () => {
       <Header></Header>
       <div className="min-h-screen pt-36 pb-12">
 
+        {islogedin ?('Login First'):(
         <div className="max-w-6xl bg-black mx-auto shadow-md rounded-lg p-6">
           {/* Cart Header */}
           <h1 className="text-2xl font-bold mb-4">
@@ -270,7 +272,9 @@ const Cart = () => {
 
 
           </div>
-        </div>
+        </div>)}
+
+
       </div>
     </div>
   );

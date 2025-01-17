@@ -5,6 +5,7 @@ import axios from "axios"
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
 import Header from "./Header";
+import "./style.css"
 
 
 // Here we are going to define for sign up page 
@@ -108,45 +109,55 @@ export default function SignIn() {
   return (
     <div>
       <Header></Header>
-      <div className="flex font-poppins justify-center items-center min-h-screen ">
-        <ToastContainer />
-        <form onSubmit={handelSubmit}>
-          <div className="bg-white p-6 rounded-lg shadow-lg w-96">
-            <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">Log In</h2>
+      <ToastContainer />
+      <div className="flex font-poppins justify-center items-center  min-h-screen ">
+        {/* Animated Borders */}
 
-            <div className="mb-4">
-              <label htmlFor="email" className="block text-sm font-medium text-gray-600 mb-1">
-                Email Address
-              </label>
-              <input
-                onChange={updatedata} name="email" value={userdata.email} required
-                type="email"
-                id="email"
-                placeholder="johndoe@gmail.com"
-                className="w-full px-4 py-2 border rounded-lg  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
-              />
-            </div>
-
-            <div className="mb-6">
-              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-600 mb-1">
-                Password
-              </label>
-              <input
-                onChange={updatedata} name="password" value={userdata.password} required
-                type="password"
-                id="Password"
-                placeholder=" Password"
-                autocomplete="new-password"
-                className="w-full px-4 py-2 border rounded-lg  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
-              />
-            </div>
-            {/* for otp */}
-            <div className="flex w-[70%] justify-center mx-auto flex-row gap-2">
+       
 
 
-              <button className="w-[50%] h-[40px] mx-auto   rounded-lg border-[1px] placeholder:text-center  border-[#59023B] bg-black ">Submit</button>
-            </div>
-            {/* <button
+
+
+
+        <div className="relative w-[380px] h-[400px] bg-[white] rounded-lg mt-16 overflow-hidden box">
+        <div className="border-line"></div>
+          <form onSubmit={handelSubmit} >
+            <div className="absolute inset-1 bg-[#222] rounded-lg p-8 z-10">
+              <h2 className="text-2xl font-semibold  text-center mb-6">Log In</h2>
+
+              <div className="mb-4">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-600 mb-1">
+                  Email Address
+                </label>
+                <input
+                  onChange={updatedata} name="email" value={userdata.email} required
+                  type="email"
+                  id="email"
+                  placeholder="johndoe@gmail.com"
+                  className="w-full px-4 py-2 border rounded-lg  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                />
+              </div>
+
+              <div className="mb-6">
+                <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-600 mb-1">
+                  Password
+                </label>
+                <input
+                  onChange={updatedata} name="password" value={userdata.password} required
+                  type="password"
+                  id="Password"
+                  placeholder=" Password"
+                  autocomplete="new-password"
+                  className="w-full px-4 py-2 border rounded-lg  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                />
+              </div>
+              {/* for otp */}
+              <div className="flex w-[70%] justify-center mx-auto flex-row gap-2">
+
+
+                <button className="w-40 py-2 bg-pink-600 text-white rounded-full font-semibold hover:bg-pink-700 transition">Submit</button>
+              </div>
+              {/* <button
                             
                             type="submit"
                             className="w-full flex justify-center items-center px-4 py-2 bg-red-500 text-white font-semibold rounded-full shadow-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400"
@@ -163,14 +174,15 @@ export default function SignIn() {
                             </svg>
                         </button> */}
 
-            <p className="text-center text-sm text-gray-500 mt-4">
-              Already have an account?{" "}
-              <Link to={'/sign_up'}><h className="text-red-500 font-medium hover:underline">
-                Sign Up
-              </h></Link>
-            </p>
-          </div>
-        </form>
+              <p className="text-center text-sm text-gray-500 mt-4">
+                Already have an account?{" "}
+                <Link to={'/sign_up'}><h className="text-red-500 font-medium hover:underline">
+                  Sign Up
+                </h></Link>
+              </p>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

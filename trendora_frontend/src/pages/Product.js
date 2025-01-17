@@ -119,16 +119,18 @@ function ShowProduct({ pro }) {
         <div className="w-full h-[300px] cursor-pointer ">
             <div className=" bg-white w-[100%] p-1 rounded-lg" onClick={()=>handleProductClick(pro.productid)}>
                 <figure>
+
+                    <img src={pro.images[0]} className="w-full h-[250px] object-cover rounded-lg "></img>
                     
 
-                    {pro.images.map((image, index) => (
+                    {/* {pro.images.map((image, index) => (
                         <img
                             key={index}
                             src={image}
                             alt={`Product Image ${index + 1}`}
                             className="w-full h-[250px] object-cover rounded-lg "
                         />
-                    ))}
+                    ))} */}
 
                 </figure>
                 <div className=" flex justify-center flex-col  items-center">
