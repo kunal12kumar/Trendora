@@ -70,15 +70,16 @@ export const GetCart = async (req, res) => {
     try {
         // Extract userId from the authenticated user
         const userId = req.user?.Userexitwiththisemail?._id;
-        console.log(userId);
+        
 
         if (!userId) {
-            console.log("inside loop")
+           
             return res.status(400).json({ success: false, message: "User ID is required" });
         }
 
         // Find the cart for the user
         const cart = await Cart.findOne({ userId });
+     
         console.log("Cart extraceted successfully")
 
         if (!cart || cart.products.length === 0) {
@@ -92,3 +93,31 @@ export const GetCart = async (req, res) => {
         res.status(500).json({ success: false, message: "Failed to fetch cart" });
     }
 };
+
+
+
+export const DelelteProductfromcart=  async (req, res) => {
+    try {
+      const { productId } = req.params;
+      const userId =  req.user?.Userexitwiththisemail?._id; // Assuming you're authenticating the user
+  
+      const userCart = await Cart.findOne({ userId });
+  
+      if (!userCart) {
+        return res.status(404).json({ success: false, message: 'Cart not found' });
+      }
+  
+      // Remove the product from the cart
+      userCart.products = userCart.products.filter(
+        (product) => product.productid.toString() !== productId
+      );
+      console.log ("inside the main loop");
+  
+      await userCart.save();
+  
+      res.status(200).json({ success: true, message: 'Product removed successfully' });
+    } catch (error) {
+      res.status(500).json({ success: false, message: 'Error removing product', error });
+    }
+  };
+  

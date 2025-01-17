@@ -1,17 +1,20 @@
 // This component is for Header section 
 import React from "react";
 import loginuser from "../images/white-login-user.png"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../images/logo_image.png"
+import { jwtDecode } from "jwt-decode";
 
 export default function Header() {
+    const Navigate = useNavigate();
+    const islogedin = localStorage.getItem("token")
 
     return (
         <div className="w-full h-auto fixed z-50 ">
             {/* now the heading for the discount and others part */}
 
             <div className="w-full h-[50px] bg-[#8b7777] text-2xl text-white font-roboto items-center flex justify-center  ">
-                Get 10% discount on your first Purchase 
+                Get 10% discount on your first Purchase
 
             </div>
             {/* now for nav which contains the menu , cart ,sign in or sign up section  */}
@@ -40,7 +43,7 @@ export default function Header() {
                             <ul className="menu bg-black flex justify-center  text-2xl text-base-content min-h-full w-80  gap-2">
                                 {/* Sidebar content here */}
                                 <img className="h-[300px] " src={logo}></img>
-                               
+
                                 <Link to={'/bulk_order'}><li className="hover:bg-base-300 rounded-lg p-2">Customize Design</li></Link>
                                 <Link to={'/bulk_order'}><li className="hover:bg-base-300 rounded-lg p-2">Bulk Order</li></Link>
                                 <Link to={'/'}><li className="hover:bg-base-300 rounded-lg p-2">Huddy</li></Link>
@@ -51,25 +54,30 @@ export default function Header() {
                                 <Link to={'/profile'}><li className="hover:bg-base-300 rounded-lg p-2">Profile</li></Link>
                                 <Link to={'/productuploadform'}><li className="hover:bg-base-300 rounded-lg p-2">UploadProduct</li></Link>
 
-                                
-                                
-    
+
+
+
 
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div className="navbar-center">
-                    <a className="  text-3xl text-white font-roboto">TrendOra</a>
+                    <Link to={'/'}><a className="  text-3xl text-white font-roboto">TrendOra</a></Link>
                 </div>
                 <div className="navbar-end">
                     <div className=" flex gap-4 justify-between ">
                         {/* for sign in icon  */}
                         <div>
-                            <Link to={'/sign_up'}><img className=" h-10 w-10 mt-1 " src={loginuser}></img></Link>
+                            {islogedin ? (
+                                <Link to="/profile"><h1 className="h-10 w-10 mt-1">Profile</h1></Link>
+                            ) : (
+                                <Link to={'/sign_up'}><img className=" h-10 w-10 mt-1 " src={loginuser}></img></Link>
+                            )}
+                            
 
                         </div>
-                        <div className="dropdown dropdown-end">
+                        {islogedin ?(<Link to={'/cart'}><div className="dropdown dropdown-end">
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
                                 <div className="indicator">
                                     <svg
@@ -87,18 +95,10 @@ export default function Header() {
                                     <span className="badge badge-sm indicator-item">8</span>
                                 </div>
                             </div>
-                            <div
-                                tabIndex={0}
-                                className="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow">
-                                <div className="card-body">
-                                    <span className="text-lg font-bold">8 Items</span>
-                                    <span className="text-info">Subtotal: $999</span>
-                                    <div className="card-actions">
-                                        <Link to={'/cart'}><button className="btn btn-primary btn-block">View cart</button></Link>
-                                    </div>
-                                </div>
-                            </div>
+                           
                         </div>
+                        </Link>):( '')}
+                       
                     </div>
                 </div>
 

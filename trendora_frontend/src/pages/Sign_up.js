@@ -5,12 +5,13 @@ import axios from "axios"
 
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
+import Header from "./Header";
 
 export default function Signup() {
 
     // here code for token and login authentication 
 
-   
+
 
 
 
@@ -122,78 +123,79 @@ export default function Signup() {
 
 
     }
-    
-   
+
+
 
 
 
 
 
     return (
+        <div>
+            <Header></Header>
 
+            <div className="flex font-poppins justify-center items-center min-h-screen ">
+                <ToastContainer />
+                <form onSubmit={handelSubmit}>
+                    <div className="bg-white p-6 rounded-lg shadow-lg w-96 mt-24">
+                        <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">Sign Up</h2>
 
-        <div className="flex font-poppins justify-center items-center min-h-screen ">
-            <ToastContainer />
-            <form onSubmit={handelSubmit}>
-                <div className="bg-white p-6 rounded-lg shadow-lg w-96">
-                    <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">Sign Up</h2>
+                        <div className="mb-4">
+                            <label htmlFor="fullName" className="block text-sm font-medium text-gray-600 mb-1">
+                                Username
+                            </label>
+                            <input
+                                onChange={updatedata} name="username" value={userdata.username} required
 
-                    <div className="mb-4">
-                        <label htmlFor="fullName" className="block text-sm font-medium text-gray-600 mb-1">
-                            Username
-                        </label>
-                        <input
-                            onChange={updatedata} name="username" value={userdata.username} required
+                                type="text"
+                                id="Username"
+                                placeholder="John Doe"
+                                className="w-full px-4 py-2 border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                            />
+                        </div>
+                        <div className="mb-4">
+                            <label htmlFor="email" className="block text-sm font-medium text-gray-600 mb-1">
+                                Email Address
+                            </label>
+                            <input
+                                onChange={updatedata} name="email" value={userdata.email} required
+                                type="email"
+                                id="email"
+                                placeholder="johndoe@gmail.com"
+                                className="w-full px-4 py-2 border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                            />
+                        </div>
+                        <div className="mb-4">
+                            <label htmlFor="password" className="block text-sm font-medium text-gray-600 mb-1">
+                                Mobile No.
+                            </label>
+                            <input
+                                onChange={updatedata} name="mobileno" value={userdata.mobileno} required
+                                type="MobileNo"
+                                id="MobileNo."
+                                placeholder="MobileNo."
+                                className="w-full px-4 py-2 border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                            />
+                        </div>
+                        <div className="mb-6">
+                            <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-600 mb-1">
+                                Password
+                            </label>
+                            <input
+                                onChange={updatedata} name="password" value={userdata.password} required
+                                type="password"
+                                id="Password"
+                                placeholder=" Password"
+                                className="w-full px-4 py-2 border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                            />
+                        </div>
+                        {/* for otp */}
+                        <div className="flex w-[70%] justify-center  mx-auto flex-row gap-2">
+                            {isotpsent && (<input onChange={updatedata} name="otp" value={userdata.otp} required className="w-[70%] h-[40px] rounded-lg border-[1px] placeholder:text-center hover:border-[2px] hover:border-[#0F2F8C] text-center border-[#59023B] " type="text" placeholder="Otp"></input>)}
 
-                            type="text"
-                            id="Username"
-                            placeholder="John Doe"
-                            className="w-full px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
-                        />
-                    </div>
-                    <div className="mb-4">
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-600 mb-1">
-                            Email Address
-                        </label>
-                        <input
-                            onChange={updatedata} name="email" value={userdata.email} required
-                            type="email"
-                            id="email"
-                            placeholder="johndoe@gmail.com"
-                            className="w-full px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
-                        />
-                    </div>
-                    <div className="mb-4">
-                        <label htmlFor="password" className="block text-sm font-medium text-gray-600 mb-1">
-                            Mobile No.
-                        </label>
-                        <input
-                            onChange={updatedata} name="mobileno" value={userdata.mobileno} required
-                            type="MobileNo"
-                            id="MobileNo."
-                            placeholder="MobileNo."
-                            className="w-full px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
-                        />
-                    </div>
-                    <div className="mb-6">
-                        <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-600 mb-1">
-                            Password
-                        </label>
-                        <input
-                            onChange={updatedata} name="password" value={userdata.password} required
-                            type="password"
-                            id="Password"
-                            placeholder=" Password"
-                            className="w-full px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
-                        />
-                    </div>
-                    {/* for otp */}
-                    <div className="flex w-[70%] justify-center  mx-auto flex-row gap-2">
-                        {isotpsent && (<input onChange={updatedata} name="otp" value={userdata.otp} required className="w-[70%] h-[40px] rounded-lg border-[1px] placeholder:text-center hover:border-[2px] hover:border-[#0F2F8C] text-center border-[#59023B] " type="text" placeholder="Otp"></input>)}
-
-                        <button className="w-[50%] h-[40px] mx-auto bg-black  rounded-lg border-[1px] placeholder:text-center hover:border-[2px] hover:border-[#0F2F8C] text-center text-red border-[#59023B] ">{isotpsent ? 'verify' : 'Send'}</button>
-                    </div>
-                    {/* <button
+                            <button className="w-[50%] h-[40px] mx-auto bg-black  rounded-lg border-[1px] placeholder:text-center hover:border-[2px] hover:border-[#0F2F8C] text-center text-red border-[#59023B] ">{isotpsent ? 'verify' : 'Send'}</button>
+                        </div>
+                        {/* <button
                             
                             type="submit"
                             className="w-full flex justify-center items-center px-4 py-2 bg-red-500 text-white font-semibold rounded-full shadow-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400"
@@ -210,20 +212,22 @@ export default function Signup() {
                             </svg>
                         </button> */}
 
-                    <p className="text-center text-sm text-gray-500 mt-4">
-                        Already have an account?{" "}
-
-                      
-
-                        <Link to={'/log_in'}>Signin</Link>
+                        <p className="text-center text-sm text-gray-500 mt-4">
+                            Already have an account?{" "}
 
 
-                    </p>
+
+                            <Link to={'/log_in'}>Signin</Link>
 
 
-                </div>
-            </form>
+                        </p>
+
+
+                    </div>
+                </form>
+            </div>
         </div>
+
 
 
 

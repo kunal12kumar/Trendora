@@ -4,6 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import axios from "axios"
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
+import Header from "./Header";
 
 
 // Here we are going to define for sign up page 
@@ -15,8 +16,8 @@ export default function SignIn() {
   // to udate the all data 
   const [userdata, setuserdata] = useState(
     {
-      email:'',
-      password:''
+      email: '',
+      password: ''
 
     }
   );
@@ -66,19 +67,20 @@ export default function SignIn() {
 
         password: userdata.password,
 
-      },{
-      
+      }, {
+
         headers: {
           "Content-Type": "application/json"
-        }});
+        }
+      });
       console.log(response);
 
       if (response.status === 200) {
-        const token=response.data.token
+        const token = response.data.token
         localStorage.setItem("token", token);   //storing token in localStorage to use it latter
         console.log(token)
         toast.success(response.data.message);
-        navigate('/profile')
+        navigate('/')
 
       }
     } catch (error) {
@@ -88,11 +90,11 @@ export default function SignIn() {
 
 
     setuserdata({
-    
+
       email: '',
-      
+
       password: '',
-  
+
     })
 
 
@@ -104,45 +106,47 @@ export default function SignIn() {
 
 
   return (
-    <div className="flex font-poppins justify-center items-center min-h-screen ">
-      <ToastContainer />
-      <form onSubmit={handelSubmit}>
-        <div className="bg-white p-6 rounded-lg shadow-lg w-96">
-          <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">Log In</h2>
+    <div>
+      <Header></Header>
+      <div className="flex font-poppins justify-center items-center min-h-screen ">
+        <ToastContainer />
+        <form onSubmit={handelSubmit}>
+          <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+            <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">Log In</h2>
 
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-600 mb-1">
-              Email Address
-            </label>
-            <input
-              onChange={updatedata} name="email" value={userdata.email} required
-              type="email"
-              id="email"
-              placeholder="johndoe@gmail.com"
-              className="w-full px-4 py-2 border rounded-lg  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
-            />
-          </div>
+            <div className="mb-4">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-600 mb-1">
+                Email Address
+              </label>
+              <input
+                onChange={updatedata} name="email" value={userdata.email} required
+                type="email"
+                id="email"
+                placeholder="johndoe@gmail.com"
+                className="w-full px-4 py-2 border rounded-lg  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+              />
+            </div>
 
-          <div className="mb-6">
-            <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-600 mb-1">
-              Password
-            </label>
-            <input
-              onChange={updatedata} name="password" value={userdata.password} required
-              type="password"
-              id="Password"
-              placeholder=" Password"
-              autocomplete="new-password"
-              className="w-full px-4 py-2 border rounded-lg  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
-            />
-          </div>
-          {/* for otp */}
-          <div className="flex w-[70%] justify-center mx-auto flex-row gap-2">
+            <div className="mb-6">
+              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-600 mb-1">
+                Password
+              </label>
+              <input
+                onChange={updatedata} name="password" value={userdata.password} required
+                type="password"
+                id="Password"
+                placeholder=" Password"
+                autocomplete="new-password"
+                className="w-full px-4 py-2 border rounded-lg  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+              />
+            </div>
+            {/* for otp */}
+            <div className="flex w-[70%] justify-center mx-auto flex-row gap-2">
 
 
-            <button className="w-[50%] h-[40px] mx-auto   rounded-lg border-[1px] placeholder:text-center  border-[#59023B] bg-black ">Submit</button>
-          </div>
-          {/* <button
+              <button className="w-[50%] h-[40px] mx-auto   rounded-lg border-[1px] placeholder:text-center  border-[#59023B] bg-black ">Submit</button>
+            </div>
+            {/* <button
                             
                             type="submit"
                             className="w-full flex justify-center items-center px-4 py-2 bg-red-500 text-white font-semibold rounded-full shadow-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400"
@@ -159,14 +163,15 @@ export default function SignIn() {
                             </svg>
                         </button> */}
 
-          <p className="text-center text-sm text-gray-500 mt-4">
-            Already have an account?{" "}
-            <Link to={'/sign_up'}><h className="text-red-500 font-medium hover:underline">
-              Sign Up
-            </h></Link>
-          </p>
-        </div>
-      </form>
+            <p className="text-center text-sm text-gray-500 mt-4">
+              Already have an account?{" "}
+              <Link to={'/sign_up'}><h className="text-red-500 font-medium hover:underline">
+                Sign Up
+              </h></Link>
+            </p>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
