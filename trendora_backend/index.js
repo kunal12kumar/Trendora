@@ -14,6 +14,7 @@ import favoritesrouter from "./routes/RFavourite.js";
 import addtocartrouter from "./routes/RAddtocart.js";
 import productlistrouter from "./routes/RProductlist.js";
 import addProductlisttodatabaserouter from "./routes/RAddProductlisttodatabase.js";
+import logoutrouter from "./routes/RUserLogout.js";
 
 
 
@@ -58,6 +59,7 @@ server.use('/api/RFavourite',favoritesrouter);
 server.use('/api/RAddtocart',addtocartrouter);
 server.use('/api/Rproductlist',productlistrouter);
 server.use('/api/RAddProductlisttodatabase',addProductlisttodatabaserouter)
+server.use('/api/RUserlogout',logoutrouter)
 
 
 // Use a different port if 8000 is unavailable

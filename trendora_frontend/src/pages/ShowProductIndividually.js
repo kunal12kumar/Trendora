@@ -80,6 +80,7 @@ export function ShowProductIndividualbyId() {
 
             // Get token from localStorage
             const token = localStorage.getItem("token");
+            console.log(token)
 
             if (!token) {
                 navigate("/log_in"); // Redirect to login if no token found

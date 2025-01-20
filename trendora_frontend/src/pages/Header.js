@@ -21,8 +21,8 @@ export default function Header() {
 
             <div className="navbar bg-black">
                 <div className="navbar-start">
-                    <div className="drawer">
-                        <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+                    <div className="drawer ">
+                        <input id="my-drawer" type="checkbox" className="drawer-toggle hover:scale-110" />
                         <div className="drawer-content">
                             {/* Page content here */}
                             <label htmlFor="my-drawer" className="btn bg-[black] border-[black] btn-primary drawer-button"><svg
@@ -46,11 +46,8 @@ export default function Header() {
 
                                 <Link to={'/bulk_order'}><li className="hover:bg-base-300 rounded-lg p-2">Customize Design</li></Link>
                                 <Link to={'/bulk_order'}><li className="hover:bg-base-300 rounded-lg p-2">Bulk Order</li></Link>
-                                <Link to={'/'}><li className="hover:bg-base-300 rounded-lg p-2">Huddy</li></Link>
                                 <Link to={'/sign_in'}><li className="hover:bg-base-300 rounded-lg p-2">Log In</li></Link>
-                                <Link to={'/'}><li className="hover:bg-base-300 rounded-lg p-2">About Us</li></Link>
-                                <Link to={'/'}><li className="hover:bg-base-300 rounded-lg p-2"> TShirts</li></Link>
-                                <Link to={'/log_out'}><li className="hover:bg-base-300 rounded-lg p-2"> Log Out</li></Link>
+                                <Link to={'/aboutus'}><li className="hover:bg-base-300 rounded-lg p-2">About Us</li></Link>
                                 <Link to={'/profile'}><li className="hover:bg-base-300 rounded-lg p-2">Profile</li></Link>
                                 <Link to={'/productuploadform'}><li className="hover:bg-base-300 rounded-lg p-2">UploadProduct</li></Link>
 
@@ -63,21 +60,26 @@ export default function Header() {
                     </div>
                 </div>
                 <div className="navbar-center">
-                    <Link to={'/'}><a className="  text-3xl text-white font-roboto">TrendOra</a></Link>
+                    <Link to={'/'}><a className=" hover:scale-110 text-3xl text-white font-serif">TrendOra</a></Link>
                 </div>
                 <div className="navbar-end">
-                    <div className=" flex gap-4 justify-between ">
+
+                    <div className=" flex gap-8 justify-between ">
+                        {/* about us page */}
+
+                        <div className=" cursor-pointer hover:scale-110 text-xl justify-center flex items-center"><Link to={'/aboutus'}>AboutUs</Link></div>
+
                         {/* for sign in icon  */}
-                        <div>
+                        <div className="text-xl hover:scale-110 justify-center flex items-center">
                             {islogedin ? (
-                                <Link to="/profile"><h1 className="h-10 w-10 mt-1">Profile</h1></Link>
+                                <Link to="/profile"><h1 >Profile</h1></Link>
                             ) : (
                                 <Link to={'/sign_up'}><img className=" h-10 w-10 mt-1 " src={loginuser}></img></Link>
                             )}
                             
 
                         </div>
-                        {islogedin ?(<Link to={'/cart'}><div className="dropdown dropdown-end">
+                        {islogedin ?(<Link to={'/cart'}><div className="dropdown hover:scale-110 dropdown-end">
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
                                 <div className="indicator">
                                     <svg
@@ -92,7 +94,7 @@ export default function Header() {
                                             strokeWidth="2"
                                             d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                                     </svg>
-                                    <span className="badge badge-sm indicator-item">8</span>
+                                    {/* <span className="badge badge-sm indicator-item">8</span> */}
                                 </div>
                             </div>
                            

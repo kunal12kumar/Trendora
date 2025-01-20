@@ -50,10 +50,7 @@ let allrouter = createBrowserRouter([
     path: '/callback',
     element: <CallbackPage></CallbackPage>
   },
-  {
-    path: 'log_out',
-    element: <LogoutButton></LogoutButton>
-  },{
+ {
     path:'/profile',
     element:<UserProfile></UserProfile>
   },{

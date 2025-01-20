@@ -1,154 +1,96 @@
+import Header from "./Header";
+
+
 import React from "react";
+import { Link } from "react-router-dom";
 
-export default function AboutUs() {
-
+const AboutUs = () => {
     return (
+        <div>
+            <Header></Header>
+            <div className=" min-h-screen pt-40 pb-12">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center">
+                        <h1 className="text-4xl font-extrabold  sm:text-5xl">
+                            About Us
+                        </h1>
+                        <p className="mt-4 text-lg ">
+                            Welcome to <span className="text-indigo-600 font-semibold">Trendora</span>,
+                            your one-stop destination for bulk custom clothing solutions.
+                        </p>
+                    </div>
+                </div>
 
-        <div className="max-w-4xl mx-auto p-6 bg-[#040404] text-[white]">
-            <h1 className="text-3xl font-bold text-center text-blue-700 mb-6">
-                TrendOra: Where Fashion Meets Your Vibe
-            </h1>
+                <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img
+                            src="https://via.placeholder.com/600x400"
+                            alt="Custom clothing"
+                            className="rounded-lg border-white border-[2px] w-full shadow-lg"
+                        />
+                    </div>
 
-            <div className="space-y-6">
-                <section className=" ">
-                    <h2 className="text-xl font-semibold text-blue-700">TrendOra is more than just a clothing brand :</h2>
-                    <p>
-                        it's a reflection of your unique style and a celebration of individuality. We believe that fashion is a powerful form of self-expression, a way to showcase your personality and tell your story to the world.
-                        At TrendOra, we curate a diverse collection of clothing and accessories that cater to a wide range of tastes and preferences. From classic and timeless pieces to the latest trends and cutting-edge designs, we offer something for everyone. Our focus is on quality, comfort, and affordability, ensuring that you can express your style without compromising on practicality or budget.
+                    <div>
+                        <h2 className="text-3xl font-bold">
+                            What We Offer
+                        </h2>
+                        <p className="mt-4 ">
+                            At <span className="text-indigo-600 font-semibold">Trendora</span>, we specialize in providing
+                            bulk orders for clothing items such as hoodies, t-shirts, and other apparel. Whether you're planning a
+                            hackathon, college event, corporate gathering, festival, or any special occasion, we've got you covered.
+                        </p>
+                        <p className="mt-4 ">
+                            Our platform also features a <span className="text-indigo-600 font-semibold">custom design tool</span> that allows
+                            customers to upload their designs. These designs can be printed on t-shirts or any other apparel of your choice,
+                            ensuring a personalized touch for every event or celebration.
+                        </p>
+                        <p className="mt-4 ">
+                            We are committed to quality, creativity, and customer satisfaction, making it easier than ever to bring your
+                            ideas to life on fabric.
+                        </p>
+                    </div>
+                </div>
 
-                    </p>
-
-                    <h2 className="text-xl font-semibold text-blue-700">Our Mission :</h2>
-
-                    <p>
-                        To empower individuals to express their unique style with confidence and inspire a global community of fashion enthusiasts.
-                    </p>
-
-                    <h2 className="text-xl font-semibold text-blue-700">Our Vision:
+                <div className="mt-16 bg-indigo-600 text-white mx-4 py-12 px-6 rounded-lg shadow-lg">
+                    <h2 className="text-3xl font-bold text-center">
+                        Why Choose Trendora?
                     </h2>
+                    <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div className="text-center">
+                            <h3 className="text-xl font-semibold">Bulk Orders Made Easy</h3>
+                            <p className="mt-2 text-gray-200">
+                                Seamlessly place bulk orders for any event or occasion.
+                            </p>
+                        </div>
+                        <div className="text-center">
+                            <h3 className="text-xl font-semibold">Customizable Designs</h3>
+                            <p className="mt-2 text-gray-200">
+                                Upload your unique designs to create personalized apparel.
+                            </p>
+                        </div>
+                        <div className="text-center">
+                            <h3 className="text-xl font-semibold">Top-Notch Quality</h3>
+                            <p className="mt-2 text-gray-200">
+                                We use high-quality fabrics and printing techniques to ensure satisfaction.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-                    <p>
-                        To be the go-to destination for stylish and affordable clothing that reflects the ever-evolving trends and individual personalities.
-
-                    </p>
-
-
-
-
-
-
-
-
-
-                </section>
-
-
-                <section>
-
-                    <h2 className="text-xl font-semibold text-blue-700">What Makes TrendOra Unique:
+                <div className="mt-16 text-center">
+                    <h2 className="text-3xl font-bold text-gray-800">
+                        Let’s Bring Your Vision to Life
                     </h2>
-
-
-
-
-                </section>
-
-                <section>
-
-                    <h2 className="text-xl font-semibold text-blue-700">Curated Collections:
-                    </h2>
-
-
-
-                    <p>
-                        Curated Collections: We meticulously curate our collections, handpicking each piece to ensure it aligns with the latest trends while maintaining a focus on timeless style.
-
+                    <p className="mt-4 ">
+                        Join thousands of satisfied customers who trust Trendora for their custom clothing needs.
                     </p>
-
-                    <h2 className="text-xl font-semibold text-blue-700">Focus on Quality:
-                    </h2>
-
-
-
-                    <p>
-                        We prioritize quality materials and craftsmanship to ensure that our products are not only stylish but also durable and comfortable.
-
-
-                    </p>
-
-                    <h2 className="text-xl font-semibold text-blue-700">Customer-Centric Approach:
-                    </h2>
-
-
-
-                    <p>
-                        We value our customers and strive to provide exceptional customer service, from personalized styling advice to hassle-free returns and exchanges.
-
-
-                    </p>
-
-                    <h2 className="text-xl font-semibold text-blue-700">Commitment to Sustainability:
-                    </h2>
-
-
-
-                    <p>
-                        We are committed to minimizing our environmental impact by exploring sustainable practices and sourcing eco-friendly materials whenever possible.
-
-
-                    </p>
-
-                    <h2 className="text-xl font-semibold text-blue-700">Community Building:
-                    </h2>
-
-
-
-                    <p>
-                        We aim to foster a vibrant community of fashion enthusiasts by engaging with our customers through social media, events, and collaborations.
-
-
-                    </p>
-
-
-
-
-
-
-                </section>
-
-
-                <section>
-
-                    <h2 className="text-xl font-semibold text-blue-700">Join the TrendOra Tribe:
-                    </h2>
-
-                    <p>
-
-                        We invite you to explore our collection and discover the perfect pieces to elevate your wardrobe. Whether you're looking for a statement dress, a comfortable pair of jeans, or the perfect accessories to complete your look, TrendOra has something for you.
-
-
-                    </p>
-
-
-                    <h2 className="text-xl font-semibold text-blue-700">More Than Just Clothes:
-                    </h2>
-
-                    <p>
-                        TrendOra is about more than just clothing; it's about embracing your individuality, expressing your creativity, and feeling confident in your own skin. Join us on this exciting journey of self-expression and discover the power of fashion
-
-                    </p>
-
-
-
-                </section>
-
-
-
-
+                    <Link to={'/'}><button className="mt-6 px-8 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700">
+                        Make Your First Order
+                    </button></Link>
+                </div>
             </div>
-
         </div>
+    );
+};
 
-
-    )
-}
+export default AboutUs;

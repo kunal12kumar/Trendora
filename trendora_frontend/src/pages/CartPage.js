@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import Header from "./Header";
 
@@ -123,9 +123,9 @@ const Cart = () => {
     <div>
       <Header></Header>
       <div className="min-h-screen pt-36 pb-12">
+      
 
-        {islogedin ?('Login First'):(
-        <div className="max-w-6xl bg-black mx-auto shadow-md rounded-lg p-6">
+        {islogedin ?(<div className="max-w-6xl bg-black mx-auto shadow-md rounded-lg p-6">
           {/* Cart Header */}
           <h1 className="text-2xl font-bold mb-4">
             No. of Product in Bag {length}
@@ -272,7 +272,9 @@ const Cart = () => {
 
 
           </div>
-        </div>)}
+        </div>):(
+          <Link to={'/log_in'}><div className="flex mx-auto justify-center items-center text-2xl border-2 w-[20%] rounded-md font-roboto p-4">Log In</div></Link>
+        )}
 
 
       </div>

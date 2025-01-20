@@ -123,8 +123,10 @@ export const UserSignup = async (req, res) => {
             const mailOptions = {
                 from: 'techcare.services1@gmail.com', // Replace with your email
                 to: email,
-                subject: 'Welcome to Robotics World ',
-                text: `Hello,   ${username}   your OTP for signup is: ${verifycode}`,
+                subject: 'Welcome to TrendOra  World where you got everything ',
+                text: `Hello,   ${username} 
+                       Welcome to TrenOra
+                       your OTP for signup is: ${verifycode}`,
             };
 
             try {

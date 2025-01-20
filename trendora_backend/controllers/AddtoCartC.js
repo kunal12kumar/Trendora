@@ -2,67 +2,47 @@ import Product from "../models/ProductlistM.js"
 import Cart from "../models/CartProduct.js";
 import axios from 'axios';
 
-export const AddToCart = async (req,res) => {
+export const AddToCart = async (req, res) => {
+  try {
+      const userId = req.user?.Userexitwiththisemail?._id;
+      if (!userId) {
+          return res.status(400).json({ message: "User ID is missing" });
+      }
 
-    try {
-        const userId = req.user?.Userexitwiththisemail?._id;   // Assuming user ID is retrieved via authentication middleware
-      
-        const { productId ,quantity} = req.body;
-        const product =await Product.findOne({ productid: productId });
-       
-        
+      const { productId, quantity } = req.body;
+      const product = await Product.findOne({ productid: productId });
+      if (!product) {
+          return res.status(404).json({ message: "Product not found" });
+      }
 
-        
+      // Find or create a cart for the user
+      let cart = await Cart.findOne({ userId });
+      if (!cart) {
+          cart = new Cart({ userId, products: [] });
+      }
 
-        if (!product) {
-            return res.status(404).json({ message: 'Product not found' });
-        }
-        
+      const existingProduct = cart.products.find((p) => p.productid === productId);
+      if (existingProduct) {
+          existingProduct.quantity += quantity;
+      } else {
+          cart.products.push({
+              productid: product.productid,
+              name: product.name,
+              price: product.price,
+              images: product.images,
+              quantity: quantity,
+          });
+      }
 
-        // Find the user's cart or create one if it doesn't exist
-        let cart = await Cart.findOne({ userId });
-        if (!cart) {
-            cart = new Cart({ userId, products: [] });
-        }
-        const existingProduct = cart.products.find((p) => p.productid === productId);
-        console.log("Existing product in cart:", existingProduct);
+      console.log("Saving cart:", cart);
+      await cart.save();
+      return res.status(200).json({ success: true, message: "Product added to cart successfully", cart });
+  } catch (error) {
+      console.error("Error in AddToCart:", error.message);
+      return res.status(400).json({ success: false, message: "Add to Cart failed", error: error.message });
+  }
+};
 
-        if (existingProduct) {
-            // Update quantity if product already exists
-            existingProduct.quantity += quantity;
-            console.log("Updated product quantity:", existingProduct.quantity);
-        } else {
-            // Add new product to the cart
-           
-            cart.products.push({
-                productid: product.productid,
-                name: product.name,
-                price: product.price,
-                images: product.images,
-                quantity: quantity,
-            });
-            console.log("New product added to cart:", cart.products);
-        }
-
-        // Save the updated cart to the database
-        await cart.save();
-
-       return  res.status(200).json({ success:true ,message: "Product added to cart successfully", cart });
-
-    } catch (error) {
-
-        return res.status(401).json(
-            {
-                success:false,
-                message: "Add to Cart failed"
-            }
-        )
-
-    }
-
-
-
-}
 
 
 

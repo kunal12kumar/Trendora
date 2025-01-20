@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import axios from "axios"
+import { Navigate, useNavigate } from "react-router-dom";
 
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
@@ -15,7 +16,7 @@ export default function Signup() {
 
 
 
-
+    const navigate = useNavigate();
     // to udate the all data 
     const [userdata, setuserdata] = useState(
         {
@@ -95,6 +96,7 @@ export default function Signup() {
 
                 if (response.status === 200) {
                     toast.success(response.data.message);
+                    navigate('/log_in')
                     // Clear the form or redirect as needed
                 }
 
@@ -141,52 +143,44 @@ export default function Signup() {
                         <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">Sign Up</h2>
 
                         <div className="mb-4">
-                            <label htmlFor="fullName" className="block text-sm font-medium text-gray-600 mb-1">
-                                Username
-                            </label>
+
                             <input
                                 onChange={updatedata} name="username" value={userdata.username} required
 
                                 type="text"
                                 id="Username"
-                                placeholder="John Doe"
-                                className="w-full px-4 py-2 border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                                placeholder="Username"
+                                className="w-full px-4 py-2 border rounded-lg text-white "
                             />
                         </div>
                         <div className="mb-4">
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-600 mb-1">
-                                Email Address
-                            </label>
+
                             <input
                                 onChange={updatedata} name="email" value={userdata.email} required
                                 type="email"
                                 id="email"
-                                placeholder="johndoe@gmail.com"
-                                className="w-full px-4 py-2 border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                                placeholder="Email"
+                                className="w-full px-4 py-2 border rounded-lg text-white "
                             />
                         </div>
                         <div className="mb-4">
-                            <label htmlFor="password" className="block text-sm font-medium text-gray-600 mb-1">
-                                Mobile No.
-                            </label>
+
                             <input
                                 onChange={updatedata} name="mobileno" value={userdata.mobileno} required
                                 type="MobileNo"
                                 id="MobileNo."
                                 placeholder="MobileNo."
-                                className="w-full px-4 py-2 border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                                className="w-full px-4 py-2 border rounded-lg text-white    "
                             />
                         </div>
                         <div className="mb-6">
-                            <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-600 mb-1">
-                                Password
-                            </label>
+
                             <input
                                 onChange={updatedata} name="password" value={userdata.password} required
                                 type="password"
                                 id="Password"
                                 placeholder=" Password"
-                                className="w-full px-4 py-2 border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                                className="w-full px-4 py-2 border rounded-lg text-white focus:outline-none focus:ring-2  focus:border-transparent"
                             />
                         </div>
                         {/* for otp */}
@@ -217,7 +211,7 @@ export default function Signup() {
 
 
 
-                            <Link to={'/log_in'}>Signin</Link>
+                            <Link to={'/log_in'}><span className="text-[red] font-semibold text-xl">Sign In</span></Link>
 
 
                         </p>
