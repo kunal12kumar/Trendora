@@ -11,7 +11,7 @@ import Signup from './pages/Sign_up';
 
 import LoginButton from './pages/Sign_in';
 import CallbackPage from './pages/Callback';
-import LogoutButton from './pages/Sign_out';
+
 import UserProfile from './pages/Profile';
 import Shippingpolicies from './pages/ShippingPolicies';
 import Refundpoliciy from './pages/RefundPolicy';

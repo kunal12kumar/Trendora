@@ -62,6 +62,8 @@ export default function UserProfile() {
 
     const handleLogout = async () => {
 
+        const restapikey=process.env.REACT_APP_API_BASE_URL
+
 
         try {
             const token = localStorage.getItem("token");
@@ -72,7 +74,7 @@ export default function UserProfile() {
             }
 
             // Send the logout request to the backend
-            const response = await axios.post("http://localhost:9000/api/RUserlogout/logout",
+            const response = await axios.post(`${restapikey}/RUserlogout/logout`,
                 {}, // Empty body
                 {
                     headers: {

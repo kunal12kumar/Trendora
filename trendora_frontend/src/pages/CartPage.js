@@ -17,6 +17,8 @@ const Cart = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
+
+
     if (!token) {
       navigate("/log_in");
       return;
@@ -32,9 +34,10 @@ const Cart = () => {
     }
 
     const fetchCart = async () => {
+      const restapikey=process.env.REACT_APP_API_BASE_URL
       try {
         const response = await axios.get(
-          "http://localhost:9000/api/RAddtocart/productfromcart",
+          `${restapikey}/RAddtocart/productfromcart`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -86,11 +89,12 @@ const Cart = () => {
   }, [cart]); // Re-run this logic whenever cart updates
 
   const handleDeleteProduct = async (productid) => {
+    const restapikey=process.env.REACT_APP_API_BASE_URL
     const token = localStorage.getItem("token");
 
     try {
       const response = await axios.postForm(
-        `http://localhost:9000/api/RAddtocart/removeproduct/${productid}`,
+        `${restapikey}/RAddtocart/removeproduct/${productid}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

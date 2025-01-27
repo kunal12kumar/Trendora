@@ -2,7 +2,7 @@
 import User from "../models/user.js";
 import bcrypt from "bcryptjs";
 import nodemailer from "nodemailer";
-import { veriyemail } from "../lib/verifyemail.js";
+
 
 export const UserSignup = async (req, res) => {
 

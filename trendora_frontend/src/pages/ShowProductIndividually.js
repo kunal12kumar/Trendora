@@ -75,6 +75,8 @@ export function ShowProductIndividualbyId() {
     const addToCart = async () => {
         try {
 
+            const restapikey=process.env.REACT_APP_API_BASE_URL
+
 
 
 
@@ -95,7 +97,7 @@ export function ShowProductIndividualbyId() {
                 console.error("Invalid token:", error);
                 navigate("/log_in"); // Redirect to login if token is invalid or expired
             }
-            const response = await axios.post('http://localhost:9000/api/RAddtocart/addtocart', { productId: product.productid, quantity: quantity },
+            const response = await axios.post(`${restapikey}/RAddtocart/addtocart`, { productId: product.productid, quantity: quantity },
                 {
                     headers: {
                         Authorization: `Bearer ${token}`, // Send the token in the header
@@ -112,6 +114,7 @@ export function ShowProductIndividualbyId() {
     const getlivelocation = async () => {
 
         try {
+            const restapikey=process.env.REACT_APP_API_BASE_URL
 
             // Get token from localStorage
             const token = localStorage.getItem("token");
@@ -137,7 +140,7 @@ export function ShowProductIndividualbyId() {
                         setLocation({ latitude, longitude });
 
                         try {
-                            const response = await axios.post("http://localhost:9000/api/RAddtocart/getlivelocation", {
+                            const response = await axios.post(`${restapikey}/RAddtocart/getlivelocation`, {
                                 lat: latitude,
                                 lng: longitude,
                             },{
@@ -178,6 +181,7 @@ export function ShowProductIndividualbyId() {
     const toggleFavorite = async () => {
         try {
             // Get token from localStorage
+            const restapikey=process.env.REACT_APP_API_BASE_URL
             const token = localStorage.getItem("token");
 
             if (!token) {
@@ -194,7 +198,7 @@ export function ShowProductIndividualbyId() {
                 navigate("/log_in"); // Redirect to login if token is invalid or expired
             }
 
-            const response = await axios.post('http://localhost:9000/api/RFavourite/favourites', { productId: product.productid },
+            const response = await axios.post(`${restapikey}/RFavourite/favourites`, { productId: product.productid },
                 {
                     headers: {
                         Authorization: `Bearer ${token}`, // Send the token in the header
@@ -213,8 +217,9 @@ export function ShowProductIndividualbyId() {
 
     const handlePayment = async () => {
         try {
+            const restapikey=process.env.REACT_APP_API_BASE_URL
             // Call backend to create an order
-            const { data } = await axios.post('http://localhost:9000/api/payment/order');
+            const { data } = await axios.post(`${restapikey}/payment/order`);
 
             const options = {
                 key: 'YOUR_RAZORPAY_KEY', // Replace with your Razorpay key
@@ -227,7 +232,7 @@ export function ShowProductIndividualbyId() {
                     // Handle successful payment
                     alert('Payment successful!');
                     console.log(response);
-                    axios.post('http://localhost:9000/api/payment/verify', response)
+                    axios.post(`${restapikey}/payment/verify`, response)
                         .then(() => alert('Payment Verified!'))
                         .catch(err => console.error(err));
                 },

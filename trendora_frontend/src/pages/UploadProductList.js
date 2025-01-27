@@ -40,6 +40,8 @@ const ProductUploadForm = () => {
     data.append("description", formData.description);
     data.append("price", formData.price);
     data.append("stock", formData.stock);
+    console.log(data)
+    const restapikey=process.env.REACT_APP_API_BASE_URL
 
     for (let i = 0; i < images.length; i++) {
       data.append("images", images[i]);
@@ -47,7 +49,7 @@ const ProductUploadForm = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:9000/api/RAddProductlisttodatabase/addProductlisttodatabase", // Replace with your backend URL
+        `${restapikey}/RAddProductlisttodatabase/addProductlisttodatabase`, // Replace with your backend URL
         data,
         { headers: { "Content-Type": "multipart/form-data" } }
       );

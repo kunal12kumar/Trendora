@@ -24,9 +24,10 @@ export default function ProductList() {
     // defining function to load all the product 
 
     const LoadingProduct = async () => {
+        const restapikey=process.env.REACT_APP_API_BASE_URL
 
         try {
-            const response = await axios.post('http://localhost:9000/api/Rproductlist/productlist')
+            const response = await axios.post(`${restapikey}/Rproductlist/productlist`)
             if (response.status === 200) {
                 setproductlist(response.data.data);
                 console.log(response.data.data);
